@@ -12,4 +12,4 @@ class Solution:
         else:
             return int(''.join(output))
 
-//28 ms runtime
+##28 ms runtime
