@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int integerBreak(int n) {
+        vector<int> dp;
+        dp.push_back(0);
+        dp.push_back(1);
+        int x, y, maxProduct;
+        for (int i = 2; i <= n ; i++)
+        {
+            x = i-1;
+            y = 1;
+            maxProduct = 0;
+            while(y <= x)
+            {
+                maxProduct = max(maxProduct, max(y,dp[y]) * max(x, dp[x]));
+                x -= 1;
+                y += 1;
+            }
+            dp.push_back(maxProduct);
+        }
+        return dp[n];
+    }
+};
